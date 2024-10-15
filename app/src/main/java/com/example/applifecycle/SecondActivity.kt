@@ -3,6 +3,7 @@ package com.example.applifecycle
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.applifecycle.databinding.ActivitySecondBinding
 
@@ -34,6 +35,7 @@ class SecondActivity : AppCompatActivity() {
 
         Log.d(TAG, "onResume: ${this::class.simpleName}")
 
+        binding.progressBar.visibility = View.VISIBLE
     }
 
     override fun onPause() {
@@ -41,13 +43,13 @@ class SecondActivity : AppCompatActivity() {
 
         Log.d(TAG, "onPause: ${this::class.simpleName}")
 
+        binding.progressBar.visibility = View.GONE
     }
 
     override fun onStop() {
         super.onStop()
 
         Log.d(TAG, "onStop: ${this::class.simpleName}")
-
     }
 
     override fun onDestroy() {
