@@ -1,6 +1,7 @@
 package com.example.applifecycle
 
 import android.app.Application
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -17,7 +18,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
+        val context : Context = this
+        val appContext: Context = applicationContext
 
         binding = ActivityMainBinding.inflate(layoutInflater)
 

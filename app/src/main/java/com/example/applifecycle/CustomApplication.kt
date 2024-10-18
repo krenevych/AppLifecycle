@@ -5,6 +5,7 @@ import android.app.Application
 import android.os.Bundle
 import android.util.Log
 import androidx.core.os.ProcessCompat
+import androidx.lifecycle.ProcessLifecycleOwner
 
 class CustomApplication : Application() {
 
@@ -48,7 +49,7 @@ class CustomApplication : Application() {
 
         registerActivityLifecycleCallbacks(MyActivityLifecycleCallbacks())
 
-
+        ProcessLifecycleOwner.get().lifecycle.addObserver(MyLifecycleObserver())
 
 //        registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
 //            override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
